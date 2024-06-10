@@ -23,6 +23,7 @@ _data = {
 
 [node name="Main" type="Node"]
 script = ExtResource( 1 )
+mob_scene = ExtResource( 3 )
 
 [node name="Ground" type="StaticBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
@@ -82,10 +83,6 @@ curve = SubResource( 5 )
 [node name="SpawnLocation" type="PathFollow" parent="SpawnPath"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.6149, 0, -20.3766 )
 
-[node name="Mob" parent="." instance=ExtResource( 3 )]
-
-[node name="Timer" type="Timer" parent="Mob"]
+[node name="MobTimer" type="Timer" parent="."]
 wait_time = 0.5
 autostart = true
-
-[connection signal="timeout" from="Mob/Timer" to="." method="_on_Timer_timeout"]
