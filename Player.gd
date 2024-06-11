@@ -5,6 +5,8 @@ export var fall_acceleration = 75
 export var jump_impulse = 20
 export var bounce_impulse = 16
 
+signal hit
+
 var velocity = Vector3.ZERO
 
 func _physics_process(delta):
@@ -54,3 +56,12 @@ func _physics_process(delta):
 				# If so, we squash it and bounce.
 				mob.squash()
 				velocity.y = bounce_impulse
+
+
+func die():
+	emit_signal("hit")
+	queue_free()
+
+
+func _on_MobDetector_body_entered(_body):
+	die()

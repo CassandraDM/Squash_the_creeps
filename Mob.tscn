@@ -4,7 +4,7 @@
 [ext_resource path="res://art/mob.glb" type="PackedScene" id=2]
 
 [sub_resource type="BoxShape" id=1]
-extents = Vector3( 0.790125, 0.519447, 1.03695 )
+extents = Vector3( 1.2202, 0.519447, 1.71634 )
 
 [node name="Mob" type="KinematicBody" groups=["mob"]]
 collision_layer = 2
@@ -16,7 +16,7 @@ script = ExtResource( 1 )
 [node name="Character" parent="Pivot" instance=ExtResource( 2 )]
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0508985, 0.419978, -0.0479348 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0508985, 0.419978, 0.484337 )
 shape = SubResource( 1 )
 
 [node name="VisibilityNotifier" type="VisibilityNotifier" parent="."]

@@ -15,7 +15,7 @@ func _ready():
 	if not $VisibilityNotifier.is_connected("screen_exited", self, "_on_VisibilityNotifier_screen_exited"):
 		$VisibilityNotifier.connect("screen_exited", self, "_on_VisibilityNotifier_screen_exited")
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	velocity = move_and_slide(velocity)
 
 # This function will be called from the Main scene.
