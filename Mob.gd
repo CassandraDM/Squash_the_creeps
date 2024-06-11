@@ -5,6 +5,9 @@ export var min_speed = 10
 # Maximum speed of the mob in meters per second.
 export var max_speed = 18
 
+# Declare the squashed signal
+signal squashed
+
 var velocity = Vector3.ZERO
 
 func _ready():
@@ -12,7 +15,7 @@ func _ready():
 	if not $VisibilityNotifier.is_connected("screen_exited", self, "_on_VisibilityNotifier_screen_exited"):
 		$VisibilityNotifier.connect("screen_exited", self, "_on_VisibilityNotifier_screen_exited")
 
-func _physics_process(_delta):
+func _physics_process(delta):
 	velocity = move_and_slide(velocity)
 
 # This function will be called from the Main scene.
@@ -38,4 +41,8 @@ func initialize(start_position, player_translation):
 	velocity = velocity.rotated(Vector3.UP, rotation.y)
 
 func _on_VisibilityNotifier_screen_exited():
+	queue_free()
+
+func squash():
+	emit_signal("squashed")
 	queue_free()
