@@ -76,10 +76,15 @@ mesh = SubResource( 3 )
 material/0 = SubResource( 4 )
 
 [node name="SpawnPath" type="Path" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 curve = SubResource( 5 )
 
 [node name="SpawnLocation" type="PathFollow" parent="SpawnPath"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.6149, 0, -20.3766 )
+transform = Transform( -0.491816, 0, -0.870699, 0, 1, 0, 0.870699, 0, -0.491816, 18.7594, 0, -20.5986 )
+offset = 34.54
+rotation_mode = 1
+cubic_interp = false
+loop = false
 
 [node name="MobTimer" type="Timer" parent="."]
 wait_time = 0.5
